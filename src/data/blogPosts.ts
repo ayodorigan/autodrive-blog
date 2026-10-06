@@ -17,7 +17,10 @@ export interface BlogPost {
   };
 }
 
-export const blogPosts: BlogPost[] = [
+import { shortPosts } from './shortPosts';
+
+// Original long-form features.
+const featurePosts: BlogPost[] = [
   {
     id: '1',
     title: 'The Evolution of Electric Vehicles: A Comprehensive Guide',
@@ -211,3 +214,6 @@ export const blogPosts: BlogPost[] = [
     }
   }
 ];
+
+// Newest first: the short reads, then the long-form features.
+export const blogPosts: BlogPost[] = [...shortPosts, ...featurePosts];
